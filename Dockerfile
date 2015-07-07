@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     dwdiff \
     emacs \
     git \
+    git-extras \
     htop \
     less \
     man-db \
@@ -79,7 +80,7 @@ RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 RUN mkdir -p ~/.oh-my-zsh/plugins/git-eheikes && \
     wget --quiet https://gist.githubusercontent.com/eheikes/fd1cae80e91538d9928f/raw/4aee260f122dff1baac90808e85128ea0c8e69de/git-custom.sh -O ~/.oh-my-zsh/plugins/git-eheikes/git-eheikes.plugin.zsh
-RUN sed -i 's/^plugins=\(.*\)/plugins=(extract git git-eheikes frontend-search node npm screen)/' ~/.zshrc
+RUN sed -i 's/^plugins=\(.*\)/plugins=(extract git git-eheikes git-extras frontend-search node npm screen)/' ~/.zshrc
 
 #
 # Install hub.
